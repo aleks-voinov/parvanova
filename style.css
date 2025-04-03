@@ -1,0 +1,391 @@
+body {
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+    position: relative; /* Ensure body is the reference for absolute positioning */
+}
+
+.block_up {
+    position: absolute;
+    top: 0; /* Position at the top of the page */
+    left: 0; /* Ensure it starts from the left edge */
+    width: 100%;
+    height: 130px;
+    background-color: rgb(125, 172, 121);
+
+}
+.block_mid {
+    position: absolute; /* Position relative to .bg_wrapper */
+    left: 100px;
+    top: 200px;
+    width: 1700px;
+    height: 1650px;
+    background-color: rgb(255, 255, 255); /* Optional background for visibility */
+}
+
+
+.bg_fona{
+    position: relative;
+    top: 130px;
+    width: 100%;
+    height: 1900px;
+    opacity: 0.7;
+
+}
+.logo_button img {
+    width: 220px;   /* Resize image to 100px */
+    height: 130px;  /* Resize image to 100px */
+    /*transition: all 0.3s ease;   Optional: Add smooth transition effect */
+}
+.logo_button {
+    position: absolute;
+    left: 800px;
+    cursor: pointer;
+}
+
+/* About Us button */
+.about_us {
+    position: relative;
+    top: 42px;
+    left: 410px;
+    padding: 30px 40px;
+    font-size: 16px;
+    background-color: #2f5e37;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+
+    display: inline-block; /* Ensures proper alignment with other buttons */
+    transition: background-color 0.3s ease;
+}
+
+.about_us:hover {
+    background-color: #224628;
+}
+/* Dropdown button */
+.dropdown-button {
+    position: relative;
+    top: 42px;
+    left: 100px;
+    padding: 30px 40px;
+    font-size: 16px;
+    background-color: #2f5e37;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    display: inline-block;  
+    z-index: 10; /* Ensure it's above other content */
+    transition: background-color 0.3s ease;
+}
+
+.dropdown-button:hover {
+    background-color: #224628;
+}
+
+/* Container for the dropdown */
+
+.dropdown-container {
+    position: relative;
+
+    padding: 30px 40px; /* No extra padding initially */    
+    transition: height 0.3s ease, background-color 0.3s ease; /* Smooth animations */
+    overflow: hidden; /* Ensures content doesn't overflow */
+    z-index: 5; /* Default z-index (behind the dropdown active state) */
+}
+
+/* Active state for the dropdown container */
+.dropdown-container.active {
+    position: relative; /* Allows it to overlay */
+    top: 50px;
+    width: 1822px; /* Span the full width */
+    height: 200px; /* Expand the container height */
+    background-color: #21662d; /* Change the background when active */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    transition: height 0.3s ease, background-color 0.3s ease; /* Smooth animations */
+
+}
+
+.button_container{
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 10px;
+    font-size: 16px;
+    background-color: antiquewhite;
+
+}
+
+.button_container:hover{
+    background-color: aqua;
+    transition: 0.3 ease;
+}
+/* Dropdown content inside the expanded box */
+.dropdown-content {
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Spacing between elements */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    
+}
+
+/* Active state for the dropdown content */
+.dropdown-container.active .dropdown-content {
+    opacity: 1; /* Make content visible */
+    z-index: 11; /* Ensure content is also visible on top */
+
+}
+
+/* Logo text */
+.logo_text {
+    position: absolute;
+    top: -8px;
+    left: 140px;
+    color: white;
+    font-size: 80px;
+    font-weight: bold;
+    font-family: 'Regular Day';
+}
+
+
+
+/* Button to Open Popup */
+#openPopup {
+    position: relative;
+    top: 40px;
+    left: 980px;
+    padding: 30px 40px;
+    font-size: 16px;
+    background-color: #2f5e37;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    display: inline-block;  
+    z-index: 10; /* Ensure it's above other content */
+    transition: background-color 0.3s ease;
+}
+
+#openPopup:hover {
+    background-color: #224628;
+}
+
+/* Popup Overlay (Hidden Initially) */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark transparent background */
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 11;
+}
+
+/* Popup Box */
+.popup-box {
+    background: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 8px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 11;
+}
+
+/* Close Button (X) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 11;
+}
+
+/* Input Fields */
+.popup-box input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 11;
+}
+
+/* Send Info Button */
+#sendInfo {
+    padding: 10px;
+    width: 100%;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #2f5e37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-colour 0.3s ease;
+    z-index: 11;
+}
+
+#sendInfo:hover {
+    background-color: #224628;
+}
+
+.login_button{
+    position: relative;
+    top: 40px;
+    left: 1000px;
+    width: 140px;
+    padding: 30px 40px;
+    font-size: 16px;
+    background-color: #2f5e37;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;  
+     /* Ensure it's above other content */
+    transition: background-color 0.3s ease;
+}
+
+
+
+/*this part is for the plants*/
+
+.plant_1 {
+    position: relative;
+    top: 50px;
+    left: 200px;
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 2;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space elements horizontally */
+    padding: 10px; /* Add spacing around content */
+    border: 3px solid red;
+}
+
+.pic_1 {
+    width: 200px;
+    height: 250px;
+    border: 3px solid red; /* Corrected border property */
+    z-index: 3;
+
+}
+
+.desc_1 {
+    position: relative;
+    left: -30px;
+    top: -20px;
+    color: white;
+    font-size: 48px; /* Adjust font size */
+    font-weight: bold;
+    margin-left: 10px; /* Add spacing between image and text */
+    z-index: 4;
+}
+
+
+
+.plant_2{
+    position: relative;
+    top: -480px;
+    left: 900px;
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 2;
+    border: 3px solid red;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space elements horizontally */
+    padding: 10px; /* Add spacing around content */
+}
+
+.pic_2 {
+    width: 170px;
+    height: 270px;
+    z-index: 3;
+    border: 3px solid red;
+
+}
+
+.plant_3{
+    position: relative;
+    top: -400px;
+    left: 200px;
+    height: 500px;
+    width: 500px;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 2;
+    border: 3px solid red;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space elements horizontally */
+    padding: 10px; /* Add spacing around content */
+}
+
+.pic_3{
+    width: 160px;
+    height: 250px;
+    z-index: 3;
+    border: 3px solid red;
+}
+
+.plant_4{
+    position: relative;
+    top: -928px;
+    left: 900px;
+    width: 500px;
+    height: 500px;
+    background-color: black;
+    opacity: 0.6;
+    z-index: 2;
+    border: 3px solid red;
+    display: flex; /* Use flexbox for alignment */
+    justify-content: space-between; /* Space elements horizontally */
+    padding: 10px; /* Add spacing around content */
+}
+
+.pic_4{
+    width: 160px;
+    height: 250px;
+    z-index: 3;
+    border: 3px solid red;
+}
+
+/* Base styles for the wrapper */
+.main-wrapper {
+    width: 1200px; /* Maximum width for larger screens */
+    margin: 0 auto; /* Center the wrapper horizontally */
+    padding: 20px 0; /* Add spacing around the content */
+    background-color: #f9f9f9; /* Optional background color */
+}
+
+/* For tablets (screens between 768px and 1024px) */
+@media (max-width: 600px) {
+    .main-wrapper {
+    width: 100%; /* Maximum width for larger screens */
+    }
+}
+
+@media (min-width: 601px) {
+    .main-wrapper {
+    width: 100%; /* Maximum width for larger screens */
+    }
+}
+
+@media (min-width: 768px) {
+    .main-wrapper {
+    width: 100%; /* Maximum width for larger screens */
+    }
+}

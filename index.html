@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/block_down.css">
+    <link rel="icon" href="images/icon.png" type="image/png">
+</head>
+<body>
+    <img src="images/big.png" alt="fona" class="bg_fona">
+
+    <div class="main-wrapper">
+        <div class="block_up">
+
+            <a href="about_us.html" class="about_us">About us</a>
+            <a href="index.html" class="logo_button"> <img src="images/new_log.png" alt="Logo"></a>
+            <button id="openPopup">Send a Plant</button>
+            <button class="login_button">Login</button>
+
+        <!-- Popup Container (Initially Hidden) -->
+            <div id="popupContainer" class="popup-overlay">
+                <div class="popup-box">
+                    <span class="close-btn">&times;</span>
+                    <h2>Enter Your Information</h2>
+                    <input type="text" id="input1" placeholder="Enter email or name.">
+                    <input type="text" id="input2" placeholder="T ell us about the plant ex: name, type, etc.">
+                    <button id="sendInfo">Send Info</button>
+                </div>
+            </div>
+
+    
+
+                
+                <button class="dropdown-button">Categories</button>
+                <div class="dropdown-container">
+                    <div class="dropdown-content">
+                        <button class= "button_container" onclick="alert('Option 1 selected')">Option 1</button>
+                        <button class= "button_container"  onclick="alert('Option 2 selected')">Option 2</button>
+                        <button class= "button_container"  onclick="alert('Option 3 selected')">Option 3</button>
+                        <script src="javascript/homepage.js"></script> 
+                                
+                    </div>
+                </div>
+        </div> 
+        
+        
+        <div class="block_mid">
+            <div class="plant_1">
+                <img src="images/plant_1.png" alt="plant_1" class="pic_1">
+                <h1 class="desc_1">Red Bromelia</h1>
+
+            </div>
+
+            <div class="plant_2">
+                <img src="images/plant_2.png" alt="plant_2" class="pic_2">
+
+            </div>
+
+            <div class="plant_3">
+                <img src="images/plant_3.png" alt="plant_2" class="pic_3">
+
+            </div>
+
+            <div class="plant_4">
+                <img src="plant_4.png" alt="plant_4" class="pic_4">
+
+            </div>
+        </div>
+        <div class="block_down">
+            <div class=" line"></div>
+            <a href="contact_us.html" class="contact">Contact us</a>
+        </div>
+    </div>
+ </body>
+</html>
